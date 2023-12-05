@@ -1,5 +1,19 @@
 # Atividade 2
 
+O OpenTelemetry Collector é uma implementação de um serviço de coleta de dados de telemetria que pode receber, processar e exportar dados de telemetria. Ele é projetado para ser flexível, permitindo que você configure exatamente quais dados ele coleta, como processa esses dados e onde os exporta.
+
+Aqui está uma visão geral de como ele funciona:
+
+- Receivers: São os pontos de entrada para os dados. O coletor pode receber dados de várias fontes e protocolos diferentes. No exemplo fornecido abaixo, o coletor está configurado para receber dados via OTLP (OpenTelemetry Protocol) sobre os protocolos gRPC e HTTP.
+
+- Processors: São usados para processar os dados coletados antes de serem exportados. Isso pode incluir coisas como filtragem de dados, agregação de dados, etc. No exemplo fornecido abaixo, o coletor está usando o processador de lote, que agrupa os dados coletados em lotes antes de exportá-los.
+
+- Exporters: São os pontos de saída para os dados. O coletor pode exportar dados para várias destinações e em vários formatos. No exemplo fornecido abaixo, o coletor está configurado para exportar dados para um logger com o nível de log definido como debug.
+
+- Service: Define a ordem em que receivers, processors e exporters são chamados. Isso permite que você controle o fluxo de dados através do coletor.
+
+![otel collector](images/otelcollector.png)
+
 ### Configurar o coletor OpenTelemetry
 O arquivo collector.yaml é um arquivo de configuração usado pelo OpenTelemetry Collector. Ele define como o coletor deve funcionar, incluindo quais dados ele deve coletar, como deve processá-los e onde deve exportá-los.
 
@@ -28,6 +42,10 @@ service:  # Define a ordem em que receivers, processors e exporters são chamado
 No exemplo acima, o coletor está configurado para receber dados via OTLP (OpenTelemetry Protocol) sobre os protocolos gRPC e HTTP, processar esses dados em lotes e, em seguida, exportá-los para um logger com nível de log definido como debug.
 
 - [Configuração do OpenTelemetry Collector](https://opentelemetry.io/docs/collector/configuration/)
+
+### Configurar exportação das métricas
+
+Vamos configurar o coletor para exportar as métricas para Prometheus.
 
 #### Passo 1
 Agora vamos configurar o exporter do Prometheus para exportarmos as métricas.
