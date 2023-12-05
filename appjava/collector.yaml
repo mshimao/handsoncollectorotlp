@@ -1,0 +1,56 @@
+receivers:
+  otlp:
+    protocols:
+        grpc:          
+        http:          
+
+processors:   
+  resource:
+    attributes:
+    - action: insert
+      key: loki.format
+      value: json
+    - action: insert 
+      key: service_name 
+      value: TesteOpenTelemetry
+    - action: insert 
+      key: service_namespace 
+      value: GeneXus    
+    - action: insert 
+      key: loki.resource.labels 
+      value: service_name,service_namespace 
+
+exporters:
+  prometheusremotewrite/grafana-cloud:
+    endpoint: https://prometheus-us-central1.grafana.net/api/prom/push  
+    headers:
+      authorization: Basic NjUyNDMzOmV5SnJJam9pWXpJM1pqUXdNRFUwT1dJNE5XUTNPV1EyTlRJeU5HSXlaVEF6WkRZNU1UZzNNR0V5WWpnMFlpSXNJbTRpT2lKSFpXNWxlSFZ6SWl3aWFXUWlPamMwTkRVNE4zMD0=
+
+  otlp:
+    endpoint: tempo-us-central1.grafana.net:443
+    headers:
+      authorization: Basic MzIxNzAwOmV5SnJJam9pWXpJM1pqUXdNRFUwT1dJNE5XUTNPV1EyTlRJeU5HSXlaVEF6WkRZNU1UZzNNR0V5WWpnMFlpSXNJbTRpT2lKSFpXNWxlSFZ6SWl3aWFXUWlPamMwTkRVNE4zMD0=
+
+  loki:
+    endpoint: https://325187:glc_eyJvIjoiNzQ0NTg3IiwibiI6InN0YWNrLTQ3NTgzMC1obC13cml0ZS1neGxva2kyIiwiayI6IjZMeUluY1hxNEVZNXo5NzZObEIzbDEwMCIsIm0iOnsiciI6InVzIn19@logs-prod3.grafana.net/loki/api/v1/push
+    
+  debug:
+    verbosity: detailed
+
+service:
+  pipelines:
+    metrics:
+      receivers: [otlp]
+      exporters: [prometheusremotewrite/grafana-cloud]
+    traces:
+      receivers: [ otlp]
+      exporters: [ otlp ]
+    logs:
+      receivers: [ otlp]
+      processors: [resource]
+      exporters: [ loki , debug]
+  telemetry:
+    logs:
+      level: debug
+
+
