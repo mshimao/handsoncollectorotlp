@@ -109,7 +109,7 @@ Você também pode usar um o site https://www.base64encode.org/ para fazer o enc
 ![prometheustoken5](images/prometheustoken5.png)
 
 
-Copiar a string resultante do encoding e substituir a tag {base64 encoded username:password} da configuração do Prometheus no arquivo collector.yaml.
+Copiar a string resultante do encoding, substituir a tag {base64 encoded username:password} da configuração do Prometheus no arquivo collector.yaml e salvar o arquivo.
 
 ![prometheustokencollector](images/prometheustokencollector.png)
 
