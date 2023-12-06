@@ -45,7 +45,7 @@ No exemplo acima, o coletor está configurado para receber dados via OTLP (OpenT
 
 ### Configurar exportação das métricas
 
-Vamos configurar o coletor para exportar as métricas para Prometheus.
+Vamos configurar o coletor para exportar as métricas para o Prometheus.
 
 #### Passo 1
 Agora vamos configurar o exporter do Prometheus para exportarmos as métricas.

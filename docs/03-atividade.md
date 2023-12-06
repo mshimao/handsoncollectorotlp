@@ -1,39 +1,49 @@
 # Atividade 3
 
-### Executar a aplicação e visualizar as métricas no Grafana
-Vamos executar uma aplicação Java com a observabilidade configurada, essa aplicação foi implantada numa imagem docker.
-Será utilizado o docker compose para subir 2 containeres um com a aplicação Java e outra com o coletor.
+### Configurar exportação dos traces.
+
+Vamos configurar o coletor para exportar os traces para o Tempo.
 
 #### Passo 1
-Abrir um linha de comando e ir até a pasta collector, e executar o comando docker
+Clicar na opção "Send Traces" do Tempo.
 
-```bash
-docker-compose -f docker-compose-java.yml up -d
-```
+![Tempo](images/Tempo.png)
 
-![dockercomposeup](images/dockercomposeup.png)
+Copiar a url do Tempo e colar no endpoint do Tempo no arquivo collector.yaml.
 
-#### Passo 2
-Acessar o Grafana Cloud para visualizar as métricas.
+![urltempo](images/tempendpoint.png)
 
-- [https://grafana.com/](https://grafana.com/)
+![urltempocollector](images/tempourlcollector.png)
 
-Clicar na opção "Launch" do item Grafana.
+Clicar em "Generate now" para gerar o token de acesso ao Tempo.
 
-![Grafana Launch](images/grafanalaunch.png)
+![tempotoken](images/tempotoken.png)
 
-#### Passo 3
-Clicar em "Home" e no item "Explore".
+No popup informar o nome do token e clicar em "Create token".
 
-![Grafana Explore](images/grafanaexplore.png)
-
-Selecionar o item "Prometheus" em Outline.
-
-![Grafana Prometheus](images/grafanaprometheus.png)
+![tempotoken2](images/tempotoken2.png)
 
 
-Para parar a execução dos conteineres executar o comando:
+Copiar o token gerado e guardar num arquivo texto.
 
-```bash
-docker-compose -f docker-compose-java.yml down
-```
+![tempotoken3](images/tempotoken3.png)
+
+
+Copiar o Username e usando um encoder base64, encodar a string "username:token". Para isso você pode utilizar o DevToys uma ferramenta gratuida para Windows que possui várias funções úteis para o dia a dia.
+
+- [Download DevToys](https://devtoys.app/)
+
+Você também pode usar um o site https://www.base64encode.org/ para fazer o encode.
+
+![tempotoken4](images/tempotoken4.png)
+
+![tempotoken5](images/tempotoken5.png)
+
+Copiar a string resultante do encoding, substituir a tag {base64 encoded username:password} da configuração do Tempo no arquivo collector.yaml e salvar o arquivo.
+
+![tempotokencollector](images/tempotokencollector.png)
+
+
+Próxima atividade: [Atividade 04](04-atividade.md)
+
+
