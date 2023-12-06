@@ -58,7 +58,7 @@ O diagrama abaixo apresenta a arquitetura dos componentes:
 
 ### Copiar os arquivos do hands-on
 
-Para copiar os arquivos do hands-on, realizar o clone do repositório git ou o download do zip.
+Para prosseguir será necessário copiar os arquivos do hands-on, para isso realizar o clone do repositório git ou o download do zip.
 
 ![githubproject](images/githubproject.png)
 

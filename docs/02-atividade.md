@@ -2,6 +2,8 @@
 
 O OpenTelemetry Collector é uma implementação de um serviço de coleta de dados de telemetria que pode receber, processar e exportar dados de telemetria. Ele é projetado para ser flexível, permitindo que você configure exatamente quais dados ele coleta, como processa esses dados e onde os exporta.
 
+![otel collector](images/otelcollector.png)
+
 Aqui está uma visão geral de como ele funciona:
 
 - Receivers: São os pontos de entrada para os dados. O coletor pode receber dados de várias fontes e protocolos diferentes. No exemplo fornecido abaixo, o coletor está configurado para receber dados via OTLP (OpenTelemetry Protocol) sobre os protocolos gRPC e HTTP.
@@ -12,7 +14,7 @@ Aqui está uma visão geral de como ele funciona:
 
 - Service: Define a ordem em que receivers, processors e exporters são chamados. Isso permite que você controle o fluxo de dados através do coletor.
 
-![otel collector](images/otelcollector.png)
+
 
 ### Configurar o coletor OpenTelemetry
 O arquivo collector.yaml é um arquivo de configuração usado pelo OpenTelemetry Collector. Ele define como o coletor deve funcionar, incluindo quais dados ele deve coletar, como deve processá-los e onde deve exportá-los.
