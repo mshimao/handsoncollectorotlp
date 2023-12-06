@@ -54,11 +54,11 @@ Como esses softwares são open source, é possível a instalação deles num amb
 
 O diagrama abaixo apresenta a arquitetura dos componentes:
 
-![diagrama dos componentes](images/gxopentelemetrydiagram.png)
+![diagrama dos componentes](images/opentelemetrydiagram.png)
 
 ### Copiar os arquivos do hands-on
 
-Para copiar os arquivos do hands-on realizar o clone do repositório git ou realizar o download do zip.
+Para copiar os arquivos do hands-on, realizar o clone do repositório git ou o download do zip.
 
 ![githubproject](images/githubproject.png)
 
