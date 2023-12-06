@@ -32,7 +32,7 @@ exporters:
       authorization: Basic {base64 encoded username:password}
 
   loki:
-    endpoint: https://{user:token}@{Loki url}/loki/api/v1/push
+    endpoint: https://{user}:{token}@{Loki url}/loki/api/v1/push
     
   debug:
     verbosity: detailed

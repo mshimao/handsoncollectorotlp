@@ -76,7 +76,7 @@ Clicar na opção "Send Metrics" do Prometheus.
 ![prometheus](images/prometheus.png)
 
 
-Copiar o endpoint "Remote Write Endpoint" e colar no endpoint do Prometheus no arquivo collector.yaml.
+Copiar o endpoint "Remote Write Endpoint" e colar na tag {Prometheus endpoint} do Prometheus no arquivo collector.yaml.
 
 ![Remote Write Endpoint](images/prometheusendpoint.png)
 
