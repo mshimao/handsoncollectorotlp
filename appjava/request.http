@@ -1,0 +1,3 @@
+ ## List all the clients
+GET http://localhost:8888/Core/ClientAPI/List
+Accept: application/json

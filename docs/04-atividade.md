@@ -9,7 +9,7 @@ Clicar na opção "Send Logs" do Loki.
 
 ![Loki](images/loki.png)
 
-Copiar a url do Loki e colar na tag {Loki url} do Loki no arquivo collector.yaml.
+Copiar a url do Loki (sem o https://) e colar na tag {Loki url} do Loki no arquivo collector.yaml.
 
 ![urlloki](images/lokiurl.png)
 

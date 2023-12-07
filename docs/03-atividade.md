@@ -9,7 +9,7 @@ Clicar na opção "Send Traces" do Tempo.
 
 ![Tempo](images/Tempo.png)
 
-Copiar a url do Tempo e colar na tag {Tempo endpoint} do otlp no arquivo collector.yaml.
+Copiar a url do Tempo (sem o https:// e sem /tempo), adicionar :433 no final e colar na tag {Tempo endpoint} do otlp no arquivo collector.yaml.
 
 ![urltempo](images/tempendpoint.png)
 
