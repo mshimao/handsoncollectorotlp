@@ -12,10 +12,10 @@ processors:
       value: json
     - action: insert 
       key: service_name 
-      value: TesteOpenTelemetry
+      value: AppJava
     - action: insert 
       key: service_namespace 
-      value: GeneXus    
+      value: Handson    
     - action: insert 
       key: loki.resource.labels 
       value: service_name,service_namespace 
@@ -41,14 +41,14 @@ service:
   pipelines:
     metrics:
       receivers: [otlp]
-      exporters: [prometheusremotewrite/grafana-cloud, debug]
+      exporters: [prometheusremotewrite/grafana-cloud]
     traces:
       receivers: [ otlp]
-      exporters: [ otlp , debug]
+      exporters: [ otlp]
     logs:
       receivers: [ otlp]
       processors: [resource]
-      exporters: [ loki , debug]
+      exporters: [ loki]
   telemetry:
     logs:
       level: debug

@@ -37,7 +37,4 @@ Copiar o user e colar e substituir a tag {user} da configuração do Loki no arq
 ![lokitoken6](images/lokitoken6.png)
 
 
-
 Próxima atividade: [Atividade 05](05-atividade.md)
-
-
