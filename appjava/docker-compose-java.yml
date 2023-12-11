@@ -23,8 +23,8 @@ services:
       - GX_LOG_LEVEL_USER=debug
       - GX_LOG_OUTPUT=ConsoleAppender
       - GX_DEFAULT_DB_URL=jdbc:sqlserver://sqlserver:1433;databaseName=testejava;encrypt=true;trustServerCertificate=true;
-      - GX_DEFAULT_DB_USER_ID=sa
-      - GX_DEFAULT_DB_PASSWORD=Aglsolutions!2023 
+      - GX_DEFAULT_USER_ID=sa
+      - GX_DEFAULT_USER_PASSWORD=Aglsolutions!2023 
 
     ports:
       - "8888:8080"
