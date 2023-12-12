@@ -43,60 +43,21 @@ E podemos ver o erro com mais detalhes.
 ![viewlogerrordetails](images/viewlogerrordetails.png)
 
 #### Passo 4
-Agora vamos visualizar o log da aplicação.
+Agora vamos visualizar os erros no log da aplicação.
 Alterar a fonte de dados para o "Loki" em Outline, o nome do item deve ter o seguinte formato **grafanacloud-{nomedaconta}-logs**.
 
 ![Explore Loki](images/exploreloki.png)
 
-Para visualizar o log, no item "Label Filters", selecionar "AppJava". Depois clicar no botão "Run Query".
+Para visualizar o log, no item "Label Filters", selecionar "AppJava". Informar o texto "ERROR" no campo "Line contains". Depois clicar no botão "Run Query".
 
-![querylog](images/querylog.png)
+![filterlogerror](images/filterlogerror.png)
 
-Pode ser que nenhum registro seja apresentado, isso se deve ao filtro padrão de tempo, para alterar isso, clicar no ícone do relógio no canto superior, selecionar o item "Last 3 hours", e clicar novamente em "Run Query".
+Os itens do log com o texto "ERROR" devem ser listados, ao clicar no primeiro item da lista, deve ser apresentado alguns detalhes do erro, com o link para o trace relacionado.
 
-![filterlog](images/filterlog.png)
-
-Agora devem ser apresentados os registros de log das últimas 3 horas da aplicação.
-
-![viewlog](images/viewlog.png)
-
-#### Passo 5
-Agora vamos visualizar as métricas da aplicação.
-Alterar a fonte de dados para o "Prometheus" em Outline, o nome do item deve ter o seguinte formato **grafanacloud-{nomedaconta}-prom**. 
-
-![Explore Prometheus](images/exploremetrics.png)
-
-Vamos apagar a query e criar outra, clicar no ícone da lixeira a direta.
-
-![delete query](images/clearquery.png)
-
-Agora vamos adicionar um query, clicando em "Add query".
-
-![add query](images/addquery.png)
-
-Para selecionar a métrica a ser visualizada, clicar na opção "Metrics browser", e selecionar o item "process_runtime_jvm_cpu_utilization_ratio" 
-
-![selectmetric](images/selectmetric.png)
-
-Selecionar o item "Job" no item "Select label".
-
-![selectmetricjob](images/selectmetricjob.png)
-
-Selecionar o item "Handson/AppJava" no item "Select value".
-
-![selectmetricjobvalue](images/selectmetricjobvalue.png)
-
-Para visualizar a métrica clicar no botão "Run Query".
-
-![querymetric](images/querymetric.png)
+![viewlogerrorwithtrace](images/viewlogerrordetailswithtrace.png)
 
 
-Próxima atividade: [Atividade 07](07-atividade.md)
-
-### Passo 6
-
-Vamos forçar um erro de acesso ao banco de dados, habilitando o Firewall do banco de dados no Azure.
-
+### Passo 5
 
 Para parar a execução dos conteineres executar o comando:
 
