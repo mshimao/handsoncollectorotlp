@@ -1,15 +1,11 @@
 # Atividade 6
 
-### Executar a aplicação e visualizar o log, métricas e trace no Grafana
-Vamos executar uma aplicação Java com a observabilidade configurada, essa aplicação foi implantada numa imagem docker.
-Será utilizado o docker compose para subir 3 containeres, um com a aplicação Java, outra com o coletor e outra com o banco de dados da aplicação.
+### Simular um erro na aplicação e visualizar as métricas no Grafana
+Vamos parar o container do banco de dados e com isso teremos um erro na aplicação Java, e vamos ver como o erro é apresentado no Grafana.
+
 
 #### Passo 1
-Abrir um linha de comando e ir até a pasta appjava, e executar o comando docker
-
-```bash
-docker-compose -f docker-compose-java.yml up -d
-```
+Para parar o container do banco de dados 
 
 ![dockercomposeup](images/dockercomposeup.png)
 
@@ -113,3 +109,13 @@ Para visualizar a métrica clicar no botão "Run Query".
 
 Próxima atividade: [Atividade 07](07-atividade.md)
 
+### Passo 6
+
+Vamos forçar um erro de acesso ao banco de dados, habilitando o Firewall do banco de dados no Azure.
+
+
+Para parar a execução dos conteineres executar o comando:
+
+```bash
+docker-compose -f docker-compose-java.yml down
+```
