@@ -59,8 +59,10 @@ Os itens do log com o texto "ERROR" devem ser listados, ao clicar no primeiro it
 
 ### Passo 5
 
-Para parar a execução dos conteineres executar o comando:
+Para parar a execução dos conteineres executar o comando, posicionado na pasta appjava:
 
 ```bash
 docker-compose -f docker-compose-java.yml down
 ```
+
+![dockercomposedown](images/dockercomposedown.png)
