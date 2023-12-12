@@ -1,46 +1,22 @@
 # Atividade 6
 
-### Simular um erro na aplicação e visualizar as métricas no Grafana
+### Simular um erro na aplicação e visualizar o log e trace no Grafana
 Vamos parar o container do banco de dados e com isso teremos um erro na aplicação Java, e vamos ver como o erro é apresentado no Grafana.
 
 
 #### Passo 1
-Para parar o container do banco de dados 
+Para parar o container do banco de dados vamos usar o Docker Desktop, na opção "Containers", clicar no ícone de Stop da imagem "sqlserver-1"
 
-![dockercomposeup](images/dockercomposeup.png)
+![stopsqlserver](images/stopsqlserver.png)
 
-**Observação 1** - A primeira execução pode demorar, se as imagens não foram baixadas anteriormente.
-**Observação 2** - Quando todos os conteineres estiverem no estado "Started", esperar uns 90 segundos até que o script SQL seja executado para criar a base de dados de exemplo.
 
 #### Passo 2
-Executar o request a API de teste para confirmar que a aplicação está respondendo, para isso abrir o arquivo request.http da pasta appjava com o VSCode.
-Para executar o request clicar no texto "Send Request".
-Esse request pode ser executado no Postman se preferirem.
+Vamos executar o request e ver o erro. A resposta deverá trazer uma mensagem de erro como na imagem.
 
-![request](images/requesthttp.png)
-
-A resposta deverá trazer um registro como na imagem.
-
-![response](images/requesthttpresponse.png)
-
-Se o request não funcionar, existe como verificar no Docker Desktop se a aplicação está sendo executada de modo correto.
-
-![dockerdesktop](images/dockerdesktop.png)
-
+![responseerror](images/requesthttpresponseerror.png)
 
 #### Passo 3
-Acessar o Grafana Cloud para visualizar o Trace do chamado da API.
-
-- [https://grafana.com/](https://grafana.com/)
-
-Clicar na opção "Launch" do item Grafana.
-
-![Grafana Launch](images/grafanalaunch.png)
-
-#### Passo 4
-Clicar em "Home" e no item "Explore".
-
-![Grafana Explore](images/grafanaexplore.png)
+Agora vamos ver como o erro é apresentado no Grafana.
 
 Selecionar o item "Tempo" em Outline, o nome do item deve ter o seguinte formato **grafanacloud-{nomedaconta}-traces**.
 
@@ -50,13 +26,21 @@ Para visualizar os traces, no item "Query Type", clicar na opção "Search". Dep
 
 ![querytrace](images/querytrace.png)
 
-Clicar no "Trace ID" para ver os detalhes do trace.
+Clicar primeiro item da lista, no "Trace ID" para ver os detalhes do trace.
 
-![viewtrace](images/viewtrace.png)
+![viewtrace](images/viewtraceerror.png)
 
-Podemos ver a árvore de chamadas, o tempo que cada item levou para ser executado, ao clicar no item podemos ver os detalhes da execução do item.
+Podemos ver a árvore de chamadas, que houve um erro, ao clicar no item podemos ver os detalhes do erro, mas para detalhes podemos navegar para o log, clicando no ícone log.
 
-![viewtracedetails](images/viewtracedetails.png)
+![viewtracedetails](images/viewtracedetailserror.png)
+
+Serão apresentados os registros log que estão relacionados com o trace.
+
+![viewlogerror](images/viewlogerror.png)
+
+E podemos ver o erro com mais detalhes.
+
+![viewlogerrordetails](images/viewlogerrordetails.png)
 
 #### Passo 4
 Agora vamos visualizar o log da aplicação.
