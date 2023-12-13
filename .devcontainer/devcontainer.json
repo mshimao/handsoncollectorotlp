@@ -11,6 +11,13 @@
 			"enableNonRootDocker": "true",
 			"moby": "true"
 		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"humao.rest-client"
+			]
+		}
 	}
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
