@@ -29,7 +29,7 @@ Copiar o token gerado e guardar num arquivo texto.
 ![tempotoken3](images/tempotoken3.png)
 
 
-Copiar o Username e usando um encoder base64, encodar a string "username:token". Para isso você pode utilizar o DevToys uma ferramenta gratuida para Windows que possui várias funções úteis para o dia a dia.
+Copiar o Username e usando um encoder base64, encodar a string **"username:token"**. Para isso você pode utilizar o DevToys uma ferramenta gratuida para Windows que possui várias funções úteis para o dia a dia.
 
 - [Download DevToys](https://devtoys.app/)
 

@@ -30,7 +30,7 @@ Clicar primeiro item da lista, no "Trace ID" para ver os detalhes do trace.
 
 ![viewtrace](images/viewtraceerror.png)
 
-Podemos ver a árvore de chamadas, que houve um erro, ao clicar no item podemos ver os detalhes do erro, mas para detalhes podemos navegar para o log, clicando no ícone log.
+Podemos ver a árvore de chamadas, que houve um erro, ao clicar no item podemos ver os detalhes do erro. Mas para mais detalhes podemos navegar para o log, clicando no ícone log.
 
 ![viewtracedetails](images/viewtracedetailserror.png)
 

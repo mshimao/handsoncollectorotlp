@@ -22,7 +22,7 @@ Esses três pilares permitem que os desenvolvedores e operadores entendam o que 
 
 ### Grafana
 
-Grafana é uma plataforma de análise e visualização de dados de código aberto. É comumente usada para visualizar séries temporais de dados de infraestrutura e aplicativos e criar painéis com gráficos ricos. Com Grafana, você pode criar alertas, notificações e ad-hoc explorar seus dados além de apenas visualizá-los. É muito usada em conjunto com outras ferramentas de observabilidade para monitorar o desempenho e a saúde de aplicações e sistemas.
+Grafana é uma plataforma de análise e visualização de dados de código aberto. É comumente usada para visualizar séries temporais de dados de infraestrutura e aplicativos e criar painéis com gráficos ricos. Com Grafana, você pode criar alertas, notificações e explorar seus dados além de apenas visualizá-los. É muito usada em conjunto com outras ferramentas de observabilidade para monitorar o desempenho e a saúde de aplicações e sistemas.
 
 - [Site Grafana](https://grafana.com/grafana/)
 
@@ -58,7 +58,7 @@ O diagrama abaixo apresenta a arquitetura dos componentes:
 
 ### Copiar os arquivos do hands-on
 
-Para prosseguir será necessário copiar os arquivos do hands-on, para isso realizar o clone do repositório git ou o download do zip.
+Para prosseguir será necessário copiar os arquivos do hands-on, para isso, realizar o clone do repositório git ou o download do zip.
 
 ![githubproject](images/githubproject.png)
 
