@@ -1,0 +1,28 @@
+version: "2"
+services:
+   # Collector
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:0.87.0
+    command: ["--config=/etc/otel-collector-config.yaml", ""]
+    volumes:
+      - ./collector.yaml:/etc/otel-collector-config.yaml 
+      - shared_volume:/app/bin         
+
+         
+  genexusapp:
+    image: mkshimao/opentelemetrynetsqlserver:latest
+    depends_on:
+      - otel-collector
+    volumes:
+      - shared_volume:/app/bin
+          
+    environment:
+      - GX_LOG_LEVEL=debug
+      - GX_LOG_LEVEL_USER=debug
+      - GX_LOG_OUTPUT=RollingFile
+
+    ports:
+      - "8888:80"
+
+volumes:
+  shared_volume:

@@ -1,0 +1,46 @@
+receivers:
+  filelog:
+    include: [ /app/bin/client.log ]
+    operators:
+      - type: regex_parser
+        regex: '^(?P<time>\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2},\d{3}).+\[*\]\s(?P<sev>[A-Z]*)\s(?P<msg>.*)$'
+        timestamp:
+          parse_from: attributes.time
+          layout: '%Y-%m-%d %H:%M:%S'
+        severity:
+          parse_from: attributes.sev    
+
+exporters:
+
+  loki:
+    endpoint: https://{user}:{token}@{Loki url}/loki/api/v1/push
+
+  debug:
+    verbosity: detailed
+processors:   
+  resource:
+    attributes:
+    - action: insert
+      key: loki.format
+      value: raw
+    - action: insert 
+      key: service_name 
+      value: AppASPNET
+    - action: insert 
+      key: service_namespace 
+      value: Handson    
+    - action: insert 
+      key: loki.resource.labels 
+      value: service_name,service_namespace  
+
+service:
+  pipelines:
+    logs:
+      receivers: [ filelog ]
+      processors: [resource]
+      exporters: [ loki,debug ]
+  telemetry:
+    logs:
+      level: "debug"
+
+

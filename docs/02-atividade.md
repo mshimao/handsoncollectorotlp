@@ -51,7 +51,8 @@ Vamos configurar o coletor para exportar as métricas para o Prometheus.
 
 #### Passo 1
 Agora vamos configurar o exporter do Prometheus para exportarmos as métricas.
-Abrir um linha de comando e ir até a pasta appjava, e editar o arquivo collector.yaml
+
+Editar o arquivo collector.yaml da pasta appjava.
 
 ![collector.yaml](images/collectoryaml.png)
 

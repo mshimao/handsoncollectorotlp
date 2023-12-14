@@ -1,4 +1,4 @@
-# Atividade 6
+# Atividade 7
 
 ### Simular um erro na aplicação e visualizar o log e trace no Grafana
 Vamos parar o container do banco de dados e com isso teremos um erro na aplicação Java, e vamos ver como o erro é apresentado no Grafana.
@@ -59,10 +59,12 @@ Os itens do log com o texto "ERROR" devem ser listados, ao clicar no primeiro it
 
 ### Passo 5
 
-Para parar a execução dos conteineres executar o comando, posicionado na pasta appjava:
+Para parar a execução dos conteineres, executar o comando abaixo, posicionado na pasta appjava:
 
 ```bash
 docker-compose -f docker-compose-java.yml down
 ```
 
 ![dockercomposedown](images/dockercomposedown.png)
+
+Próxima atividade: [Atividade 08](08-atividade.md)

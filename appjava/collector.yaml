@@ -22,17 +22,17 @@ processors:
 
 exporters:
   prometheusremotewrite/grafana-cloud:
-    endpoint: https://prometheus-us-central1.grafana.net/api/prom/push
+    endpoint: {Prometheus endpoint}  
     headers:
-      authorization: Basic NjUyNDMzOmdsY19leUp2SWpvaU56UTBOVGczSWl3aWJpSTZJbk4wWVdOckxUUTNOVGd6TUMxb2JTMTNjbWwwWlMxb1lXNWtjMjl1SWl3aWF5STZJbUZsU1ZOUU1tUlRlalJtU3pnMmNUTTRPR1JyTWpWNk5pSXNJbTBpT25zaWNpSTZJblZ6SW4xOQ==
+      authorization: Basic {base64 encoded username:password}
 
   otlp:
-    endpoint: tempo-us-central1.grafana.net:443
+    endpoint: {Tempo endpoint}
     headers:
-      authorization: Basic MzIxNzAwOmdsY19leUp2SWpvaU56UTBOVGczSWl3aWJpSTZJbk4wWVdOckxUUTNOVGd6TUMxb2RDMTNjbWwwWlMxMGIydGxiblJsYlhCdklpd2lheUk2SWpKYU9UazJSSHBRWTBoWU5HazNNRUl5V0c4ek0ycDVjU0lzSW0waU9uc2ljaUk2SW5WekluMTk=
+      authorization: Basic {base64 encoded username:password}
 
   loki:
-    endpoint: https://325187:glc_eyJvIjoiNzQ0NTg3IiwibiI6InN0YWNrLTQ3NTgzMC1obC13cml0ZS1oYW5kc29ubG9raSIsImsiOiI4M2w3cmdYUlBoMTUyMW1lMU02bnl5UDUiLCJtIjp7InIiOiJ1cyJ9fQ==@logs-prod3.grafana.net/loki/api/v1/push
+    endpoint: https://{user}:{token}@{Loki url}/loki/api/v1/push
     
   debug:
     verbosity: detailed
@@ -41,7 +41,6 @@ service:
   pipelines:
     metrics:
       receivers: [otlp]
-      processors: [resource]
       exporters: [prometheusremotewrite/grafana-cloud]
     traces:
       receivers: [ otlp]
